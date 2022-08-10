@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+    body{
+        background:rgb(0,0,0,0.5);
+        color: #333333;
+        margin-top: 5rem;
+        background-image: url(../../media/photoes/china1.jpg);
+        background-attachment: fixed;
+        background-blend-mode: color;
+        background-size: cover;
+}
+.signupbox{
+    width: 320px;
+    height: 500px;
+    border-radius: 20%;
+    background:rgb(0,0,0,0.5);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    color:#fff;
+    top: 50%;
+    left:50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: left;
+    font-size: 24px;
+}
+.signupbox p{
+    margin: 0;
+    padding: o;
+    font-weight: bold;
+}
+.signupbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.signupbox input[type="text"],input[type="password"],input[type="email"]{
+    border: none;
+    border-bottom:1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 20px;
+    color: #fff;
+    font-size: 16px;
+}
+.signupbox button[type="submit"]
+{
+    border: none;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    background: rgb(209, 132, 162);
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.signupbox button[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+.signupbox a{
+    text-decoration: none;
+    font-size: 24px;
+    line-height: 20px;
+    color:rgb(132, 171, 209);
+}
+.signupbox a:hover{
+    color: #ffc107;
+
+}
+ 
+</style>
+
+</head>
+<body>
+    <div class="signupbox">
+<label1>
+<h1>Sign Up Now</h1>
+
+<form method="POST" action="">
+    {% csrf_token %}
+
+    {{form.username.label}}<br>
+    {{form.username}}<br>
+
+    {{form.email.label}}<br>
+    {{form.email}}<br>
+
+    {{form.password1.label}}<br>
+    {{form.password1}}<br>
+
+    {{form.password2.label}}<br>
+    {{form.password2}}<br>
+
+    <button type="submit"> signup</button>
+    {{ form.errors }}<br><br><br>
+    Do you have account? <i><a href="{% url 'signin' %}">Login</a></i>
+</form>
+</div>
+</label1>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+body{
+    margin: 0;
+    padding: 0;
+    background: url("../../media/photoes/sh.jpg");
+    background-attachment: fixed;
+    background-blend-mode: color-dodge;
+    background-size:cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+.signinbox{
+    width: 320px;
+    height: 420px;
+    border-radius: 20%;
+    background:rgba(0,0,0,0.5);
+    color:#fff;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    top: 50%;
+    left:50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+
+}
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 20px;
+}
+.signinbox p{
+    margin: 0;
+    padding: o;
+    font-weight: bold;
+}
+.signinbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.signinbox input[type="text"],input[type="password"]{
+    border: none;
+    border-bottom:1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 20px;
+    color: #fff;
+    font-size: 16px;
+}
+.signinbox button[type="submit"]
+{
+    border: none;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    background: rgb(28, 134, 205);
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.signinbox button[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+.signinbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color:darkgrey;
+}
+.signinbox a:hover{
+    color: #ffc107;
+
+}
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: 30%;
+}
+    </style>
+    <meta charset="UTF-8">
+    <title>signin</title>
+</head>
+<body>
+<div class="signinbox">
+   
+    <h1>Login Here</h1>
+{% for message in messages %}
+   <p id="message">{{message}}</p>
+{% endfor %}
+<form action="/signin" method="POST" >
+    {% csrf_token %}
+    <label >Username</label><br>
+    <br>
+    <label for="username"></label><input type="text" id="username" name="username" placeholder="username" required><br><br>
+    <label >Password</label><br><br>
+    <label for="password1"></label><input type="password" id="password1" name="password1" placeholder="Enter password" required><br><br>
+    <button type="submit"> signin</button>
+</form>
+<br>
+<a href="/andika"> create your account</a></button>
+</div>
+</body>
+</html>
